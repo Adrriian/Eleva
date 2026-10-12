@@ -12,13 +12,13 @@ MVP
 
 trilha de criação
 
-- configurar as cores tailwind
-- logica banco de dados.
-- tela Login
-- darkmode e lightmode
+- configurar as cores tailwind ok
+- darkmode e lightmode ok
+- tela Login 
 - redifinir senha
 - cadastro de usuario
 - Função de cadastrar usuario, login e redifinir senha.
+- logica banco de dados.
 - Tela de dashbord
 - tela de adicionar Receitas
 - função de adicionar receitas
