@@ -11,6 +11,7 @@
   --bordas-input: #303036;
   --fundo-principal: #FFFFFF;
   --fundo-secundario: #F7F5F6;
+  --fundo-card: #d5d5d5;
   --bg-input: #FFFFFF;
   --texto-principal: #252126;
   --texto-secundario: #C2184B;
@@ -30,6 +31,7 @@
   --bordas-input: #303036;
   --fundo-principal: #0A0A0C;
   --fundo-secundario: #141417;
+  --fundo-card: #2222b3;
   --bg-input: #353535;
   --texto-principal: #F5F3F5;
   --texto-secundario: #fff;
@@ -50,8 +52,9 @@
   --color-bordo-escuro: var(--bordo-escuro);
   --color-bordo-vibrante: var(--bordo-vibrante);
   --color-bordas-input: var (--bordas-input);
-  --color-fundo-principal: var (--fundo-principal);
-  --color-fundo-secundario: var (--fundo-secundario);
+  --color-fundo-principal: var(--fundo-principal);
+  --color-fundo-secundario: var(--fundo-secundario);
+  --color-fundo-card: var(--fundo-card);
   --color-bg-input: var(--bg-input);
   --color-texto-principal: var(--texto-principal);
   --color-texto-btn: var(--texto-btn);
