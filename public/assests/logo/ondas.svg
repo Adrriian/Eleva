@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 200 475 120" width="475" height="120" fill="none">
+  <!-- onda clara (fundo) -->
+  <path fill="#C41A4A" d="M0 200 C25 240 80 272 160 277 C230 281 300 262 380 253 C420 249 450 251 475 256 L475 320 L0 320 Z"/>
+  <!-- onda média -->
+  <path fill="#7D0F30" d="M150 278 C220 280 300 268 380 262 C420 259 450 260 475 265 L475 320 L170 320 Z"/>
+  <!-- onda escura -->
+  <path fill="#4A0A1E" d="M0 250 C40 266 100 276 160 279 C240 283 320 300 355 320 L0 320 Z"/>
+  <!-- onda inferior esquerda -->
+  <path fill="#7D0F30" d="M0 286 C60 285 130 298 168 320 L0 320 Z"/>
+</svg>
