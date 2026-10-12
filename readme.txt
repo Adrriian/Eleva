@@ -1,5 +1,6 @@
 App de finanças
-
+bibliotecas externas:
+npm install lucide-react
 MVP
 - Login (email, senha, gmail)
 - darkMode e light mode

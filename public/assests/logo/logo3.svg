@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="440 135 720 690" fill="none">
+  <defs>
+    <linearGradient id="topPiece" x1="470" y1="450" x2="900" y2="270" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#B00A40"/>
+      <stop offset="0.55" stop-color="#9A0838"/>
+      <stop offset="1" stop-color="#5E0021"/>
+    </linearGradient>
+    <linearGradient id="fold" x1="480" y1="540" x2="790" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5A0022"/>
+      <stop offset="1" stop-color="#3E001B"/>
+    </linearGradient>
+    <linearGradient id="ribbon" x1="480" y1="640" x2="1120" y2="230" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#DC1250"/>
+      <stop offset="0.3" stop-color="#8E0735"/>
+      <stop offset="0.5" stop-color="#C80F49"/>
+      <stop offset="1" stop-color="#C80F49"/>
+    </linearGradient>
+    <linearGradient id="ribbonLeft" x1="470" y1="540" x2="640" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E01150" stop-opacity="1"/>
+      <stop offset="1" stop-color="#E01150" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomPiece" x1="500" y1="720" x2="1040" y2="680" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#430019"/>
+      <stop offset="0.5" stop-color="#780530"/>
+      <stop offset="1" stop-color="#9E0A3C"/>
+    </linearGradient>
+  </defs>
+
+  <!-- peça superior -->
+  <path d="M468 555 L468 465 C468 350 555 265 660 265 L900 265 Q908 265 903 272 L790 385 L660 388 C635 388 615 398 598 413 L480 528 Q468 540 468 555 Z" fill="url(#topPiece)"/>
+
+  <!-- dobra escura da peça superior -->
+  <path d="M470 550 Q470 538 480 528 L598 413 C615 398 635 388 660 388 L790 388 L705 467 L610 467 C585 467 568 478 552 492 L505 540 L488 566 L482 566 Q470 566 470 550 Z" fill="url(#fold)"/>
+
+  <!-- peça inferior -->
+  <path d="M553 646 L1050 646 Q1056 648 1050 655 L925 780 Q908 797 888 797 L555 797 C515 797 485 775 472 745 Q475 728 487 716 Z" fill="url(#bottomPiece)"/>
+
+  <!-- fita com a seta -->
+  <path d="M470 735 L468 632 C468 600 485 562 510 540 L555 492 C575 475 595 467 612 467 L740 467 C760 467 772 460 782 450 L978 256 L930 222 Q926 219 932 218 L1138 160 Q1141 159 1140 163 L1112 358 Q1111 361 1108 359 L1066 322 L820 563 C805 577 790 582 768 582 L645 582 C620 582 605 592 595 603 L555 646 L487 716 Q475 728 472 745 Z" fill="url(#ribbon)"/>
+  <path d="M470 735 L468 632 C468 600 485 562 510 540 L555 492 C575 475 595 467 612 467 L650 467 L650 582 L645 582 C620 582 605 592 595 603 L555 646 L487 716 Q475 728 472 745 Z" fill="url(#ribbonLeft)"/>
+</svg>

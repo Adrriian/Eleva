@@ -9,9 +9,12 @@
   --bordo-escuro: #4A0719;
   --bordo-vibrante: #C2184B;
   --bordas-input: #303036;
-  --fundo-pricipal: #FFFFFF;
+  --fundo-principal: #FFFFFF;
+  --fundo-secundario: #F7F5F6;
   --bg-input: #FFFFFF;
   --texto-principal: #252126;
+  --texto-secundario: #C2184B;
+  --texto-btn: #fff;
   --placeholder: #6B6670;
   --sucesso: #16804A;
   --erro: #C62828;
@@ -25,26 +28,37 @@
   --bordo-escuro: #4A0719;
   --bordo-vibrante: #E04470;
   --bordas-input: #303036;
-  --fundo-pricipal: #0A0A0C;
+  --fundo-principal: #0A0A0C;
+  --fundo-secundario: #141417;
   --bg-input: #353535;
   --texto-principal: #F5F3F5;
+  --texto-secundario: #fff;
+  --texto-btn: #fff;
   --placeholder: #B8B8C2;
   --sucesso: #4ADE80;
   --erro: #FF6B75;
 }
 
 @theme inline {
+
+  /*breakpoints*/
+  --breakpoint-xs: 375px;
+  --breakpoint-2xs: 425px;
+
+  /*colors*/
   --color-bordo: var(--bordo);
   --color-bordo-escuro: var(--bordo-escuro);
   --color-bordo-vibrante: var(--bordo-vibrante);
   --color-bordas-input: var (--bordas-input);
-  --color-fundo-pricipal: var (--fundo-pricipal);
+  --color-fundo-principal: var (--fundo-principal);
+  --color-fundo-secundario: var (--fundo-secundario);
   --color-bg-input: var(--bg-input);
   --color-texto-principal: var(--texto-principal);
-  --color-placeholder: var(placeholder);
+  --color-texto-btn: var(--texto-btn);
+  --color-placeholder: var(--placeholder);
   --color-sucesso: var(--sucesso);
   --color-erro: var(--erro);
-
+  --color-texto-secundario: var(--texto-secundario)
 }
 
 @media (prefers-color-scheme: dark) {
