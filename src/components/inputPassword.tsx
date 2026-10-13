@@ -18,7 +18,7 @@ export default function InputPassword(props: inputCom) {
                     <IconOne size={20} />
                 </div>
                 <input className="w-full sm:w-sm rounded-xl bg-bg-input py-3 px-10" type={password ? 'text' : 'password'} value={props.value} onChange={props.onChange} placeholder={props.placeholder} />
-                <div onClick={() => setPassword(e => !e)} className=" p-2 ml-57 xs:ml-72 2xs:ml-83">
+                <div onClick={() => setPassword(e => !e)} className=" p-2">
                     {password ? <EyeOff /> : <Eye />}
                 </div>
             </div>
