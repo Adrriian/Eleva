@@ -13,7 +13,7 @@ export default function InputPassword(props: inputCom) {
 
     return (
         <div className="w-full flex sm:justify-center items-center">
-            <div className="flex items-center w-full sm:w-sm border rounded-xl">
+            <div className="flex items-center w-full sm:w-sm border-2 rounded-xl">
                 <div className=" p-2 ">
                     <IconOne size={20} />
                 </div>
