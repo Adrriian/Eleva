@@ -15,9 +15,9 @@ trilha de criação
 
 - configurar as cores tailwind ok
 - darkmode e lightmode ok
-- tela Login 
-- redifinir senha
-- cadastro de usuario
+- tela Login ok
+- tela redifinir senha
+- tela cadastro de usuario
 - Função de cadastrar usuario, login e redifinir senha.
 - logica banco de dados.
 - Tela de dashbord
