@@ -14,7 +14,7 @@ export default function Input() {
     const router = useRouter()
     const [navigate, setNavigate] = useState({ reset: '/changePassword', register: 'registerUser' })
     return (
-        <div className="flex absolute z-999  top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col sm:items-center lg:items-center lg:flex-row lg:justify-around lg:w-full " >
+        <div className="flex absolute z-999 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col sm:items-center lg:items-center lg:flex-row lg:justify-around lg:w-full " >
             <div className="flex-row flex lg:gap-10 lg:items-center">
                 <div className="hidden p-5 lg:flex flex-col w-md items-start justify-start lg:gap-10">
                     <div className="flex flex-col gap-5">
