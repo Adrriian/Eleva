@@ -5,9 +5,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>
+            <body className="overflow-hidden">
                 <div className="flex flex-col items-start justify-between h-screen w-full ">
-                    <img src='/assests/logo/ondas_cima.svg' className="w-40 object-cover" />
+                    <img src='/assests/logo/ondas_cima.svg' className="w-32 object-cover" />
                     {children}
                     <img src='/assests/logo/ondas.svg' className="w-full object-cover md:object-top" />
                 </div>
