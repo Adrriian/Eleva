@@ -11,8 +11,8 @@ export default function ThemeToggle() {
             className="rounded-lg border border-bordas-input bg-fundo-pricipal px-4 py-2  transition hover:opacity-80"
         >
             {theme === "light"
-                ? "🌙 Ativar tema escuro"
-                : "☀️ Ativar tema claro"}
+                ? "Ativar tema escuro"
+                : "Ativar tema claro"}
         </button>
     );
 }

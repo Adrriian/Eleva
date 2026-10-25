@@ -1,4 +1,4 @@
-export default function Register() {
+export default function PageRegister() {
     return (
         <main>
             <h1>Bem-vindo ao Eleva!</h1>
