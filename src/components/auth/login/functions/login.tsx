@@ -18,6 +18,7 @@ export default async function Login(props: login, router: AppRouterInstance) {
         alert('Digite Sua Senha')
         return
     }
+    console.log('testando')
 
     try {
         const creteUser = await signInWithEmailAndPassword(
