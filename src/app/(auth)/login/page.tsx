@@ -1,18 +1,9 @@
 'use client'
-import ThemeToggle from "@/components/theme/BtnChangeMode";
-import InputComponente, { inputCom } from "@/components/Inputs/InputsGeral";
-import { useState } from "react";
-import { TpLogin } from "./types/TpLogin";
-import Btn from "@/components/button/ButtonGeral";
-import { ArrowRight, ChartColumn, ChartPie, File, Goal, LockKeyholeIcon, Mail } from "lucide-react";
-import InputPassword from "@/components/Inputs/inputPassword";
-import { useRouter } from "next/navigation";
-import PageComponentLogins from "@/components/auth/login/pages";
+import { ChartColumn, ChartPie, Goal } from "lucide-react";
 
-export default function PageComponentLogin() {
-    const [login, setLogin] = useState<TpLogin>({ email: '', password: '' })
-    const router = useRouter()
-    const [navigate, setNavigate] = useState({ reset: '/reset', register: 'registerUser' })
+import PageComponentLogin from "@/components/auth/login/pages";
+
+export default function PageLogin() {
     return (
         <div className="flex absolute z-999 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex-col sm:items-center lg:items-center lg:flex-row lg:justify-around lg:w-full " >
             <div className="flex-row flex lg:gap-10 lg:items-center">
@@ -57,7 +48,7 @@ export default function PageComponentLogin() {
                     </div>
                 </div>
             </div>
-            <PageComponentLogins />
+            <PageComponentLogin reset="../reset" register="../registerUser" />
         </div>
 
     )

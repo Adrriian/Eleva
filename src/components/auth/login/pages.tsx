@@ -1,5 +1,5 @@
 'use client'
-import ThemeToggle from "@/components/theme/BtnChangeMode";
+
 import InputComponente, { inputCom } from "@/components/Inputs/InputsGeral";
 import { useState } from "react";
 
@@ -8,12 +8,14 @@ import { ArrowRight, ChartColumn, ChartPie, File, Goal, LockKeyholeIcon, Mail } 
 import InputPassword from "@/components/Inputs/inputPassword";
 import { useRouter } from "next/navigation";
 import { TpLogin } from "./types/typeLg";
+import { Navigate } from "./types/navigateRouter";
+import { Login } from "./functions/login";
 
 
-export default function PageComponentLogins() {
+
+export default function PageComponentLogin(props: Navigate) {
     const [login, setLogin] = useState<TpLogin>({ email: '', password: '' })
     const router = useRouter()
-    const [navigate, setNavigate] = useState({ reset: '/reset', register: 'registerUser' })
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
             <div className="w-full bg-fundo-secundario  flex flex-col items-center gap-6 p-5 rounded sm:items-center sm:rounded-3xl md:w-md">
@@ -35,12 +37,15 @@ export default function PageComponentLogins() {
                     <InputPassword lucideOne={LockKeyholeIcon} placeholder="Digite sua Senha" value={login.password} onChange={e => setLogin({ ...login, password: e.target.value })} />
                 </div>
                 <div className="flex items-center justify-end w-full sm:w-sm">
-                    <a className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
+                    <a onClick={() => router.push(props.reset)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
                 </div>
-                <Btn title="Login" lucide={ArrowRight} />
+                <Btn title="Login" lucide={ArrowRight} callback={() => Login({
+                    email: login.email,
+                    password: login.password
+                })} />
                 <div className="flex items-center gap-2 justify-center">
                     <h1 className="text-placeholder text-xs font-bold">Não tem uma conta?</h1>
-                    <a className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Criar conta</a>
+                    <a onClick={() => router.push(props.register)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Criar conta</a>
                 </div>
             </div>
         </div>

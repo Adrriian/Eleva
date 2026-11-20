@@ -7,13 +7,27 @@ import Btn from "@/components/button/ButtonGeral";
 import { ArrowRight, ChartColumn, ChartPie, File, Goal, LockKeyholeIcon, Mail } from "lucide-react";
 import InputPassword from "@/components/Inputs/inputPassword";
 import { useRouter } from "next/navigation";
+import { TPRegister } from "./types/typeRG";
+import { NavigateRegister } from "./types/navigateRouter";
+import { Register } from "./functions/register";
 
 
 
-export default function PageComponentLogin() {
-    const [login, setLogin] = useState({ email: '', password: '' })
+export default function PageComponentRegister(props: NavigateRegister) {
+    const [passwordData, setpasswordData] = useState(false)
+    const [passwordTrue, setpasswordTrue] = useState(false)
+    const [register, setRegister] = useState<TPRegister>({ email: '', password: '', confirm: '' })
     const router = useRouter()
-    const [navigate, setNavigate] = useState({ reset: '/changePassword', register: 'registerUser' })
+
+    const confirms = (value: string) => {
+        if (register.password !== value) {
+            setpasswordData(true)
+            setpasswordTrue(false)
+        } else {
+            setpasswordData(true)
+            setpasswordTrue(true)
+        }
+    }
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
             <div className="w-full bg-fundo-secundario  flex flex-col items-center gap-6 p-5 rounded sm:items-center sm:rounded-3xl md:w-md">
@@ -23,24 +37,35 @@ export default function PageComponentLogin() {
                 </div>
                 <div className="flex flex-col gap-3 justify-center items-center">
                     <div className="flex items-center gap-2">
-                        <h1 className="font-bold text-2xl text-texto-secundario ">Bem vindo</h1>
-                        <h1 className="font-bold text-bordo-vibrante text-2xl">de volta!</h1>
+                        <h1 className="font-bold text-2xl text-texto-secundario ">Crie Sua</h1>
+                        <h1 className="font-bold text-bordo-vibrante text-2xl">Conta</h1>
                     </div>
-                    <div className="flex items-center justify-center w-full">
-                        <h1 className="text-placeholder text-sm">Acesse sua conta e continue no controle das suas finanças</h1>
+                    <div className="flex items-center justify-center w-full text-center">
+                        <h1 className="text-placeholder text-sm">Crie sua conta e dê o primeiro passo para organizar suas finanças.</h1>
                     </div>
                 </div>
                 <div className="w-full flex flex-col gap-4">
-                    <InputComponente lucide={Mail} placeholder="Digite seu Email" type='email' value={login.email} onChange={e => setLogin({ ...login, email: e.target.value })} />
-                    <InputPassword lucideOne={LockKeyholeIcon} placeholder="Digite sua Senha" value={login.password} onChange={e => setLogin({ ...login, password: e.target.value })} />
+                    <InputComponente lucide={Mail} placeholder="Digite seu Email" type='email' value={register.email} onChange={e => setRegister({ ...register, email: e.target.value })} />
+                    <InputPassword lucideOne={LockKeyholeIcon} placeholder="Digite sua Senha" value={register.password} onChange={e => setRegister({ ...register, password: e.target.value })} />
+                    <InputPassword lucideOne={LockKeyholeIcon} placeholder="Confirme sua senha" value={register.confirm} onChange={(e) => {
+                        const value = e.target.value
+                        setRegister({ ...register, confirm: value })
+                        confirms(value)
+                    }
+                    } />
+                    <h1 className={`mt-2 ml-2 text-xs   ${!passwordData ? 'hidden' : 'flex'}  ${!passwordTrue ? 'text-red-500' : 'text-green-600'}`}>{!passwordTrue ? "Senhas não batem" : "Senha batem"}</h1>
                 </div>
                 <div className="flex items-center justify-end w-full sm:w-sm">
-                    <a onClick={() => router.push(navigate.reset)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
+                    <a onClick={() => router.push(props.reset)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
                 </div>
-                <Btn title="Login" lucide={ArrowRight} />
+                <Btn title="Cadastrar" lucide={ArrowRight} callback={() => Register({
+                    email: register.email,
+                    password: register.password,
+                    confirm: register.confirm
+                })} />
                 <div className="flex items-center gap-2 justify-center">
-                    <h1 className="text-placeholder text-xs font-bold">Não tem uma conta?</h1>
-                    <a onClick={() => router.push(navigate.register)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Criar conta</a>
+                    <h1 className="text-placeholder text-xs font-bold">Conta cria? Acesse a área de</h1>
+                    <a onClick={() => router.push(props.login)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Login</a>
                 </div>
             </div>
         </div>

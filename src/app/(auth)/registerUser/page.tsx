@@ -1,7 +1,9 @@
+import PageComponentRegister from "@/components/auth/register/pages";
+
 export default function PageRegister() {
     return (
-        <main>
-            <h1>Bem-vindo ao Eleva!</h1>
+        <main className="flex justify-center items-center w-full">
+            <PageComponentRegister reset="../reset" login="../login" />
         </main>
     );
 }
