@@ -10,11 +10,13 @@ import { useRouter } from "next/navigation";
 import { TpLogin } from "./types/typeLg";
 import { Navigate } from "./types/navigateRouter";
 import { Login } from "./functions/login";
+import LoadingComponent from "@/components/loading/loading";
 
 
 
 export default function PageComponentLogin(props: Navigate) {
     const [login, setLogin] = useState<TpLogin>({ email: '', password: '' })
+    const [loading, setLoading] = useState(false)
     const router = useRouter()
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
@@ -39,10 +41,18 @@ export default function PageComponentLogin(props: Navigate) {
                 <div className="flex items-center justify-end w-full sm:w-sm">
                     <a onClick={() => router.push(props.reset)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
                 </div>
-                <Btn title="Login" lucide={ArrowRight} callback={() => Login({
-                    email: login.email,
-                    password: login.password
-                })} />
+                <Btn title="Login" lucide={ArrowRight} callback={async () => {
+                    setLoading(true)
+                    try {
+                        await Login({
+                            email: login.email,
+                            password: login.password
+                        })
+                    } finally {
+                        setLoading(false)
+                    }
+                }} />
+                <LoadingComponent loading={loading} />
                 <div className="flex items-center gap-2 justify-center">
                     <h1 className="text-placeholder text-xs font-bold">Não tem uma conta?</h1>
                     <a onClick={() => router.push(props.register)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Criar conta</a>

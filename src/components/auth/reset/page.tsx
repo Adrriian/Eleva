@@ -7,15 +7,16 @@ import { ArrowRight, Mail } from "lucide-react";
 
 import { useRouter } from "next/navigation";
 import { NavigateReset } from "./types/navigateRouter";
+import LoadingComponent from "@/components/loading/loading";
+import { Reset } from "./functions/reset";
 
 
 
 export default function PageComponentReset(props: NavigateReset) {
-    const [email, setEmail] = useState('')
+    const [loading, setLoading] = useState(false)
+    const [email, setEmail] = useState<string>('')
     const router = useRouter()
-    const reset = () => {
-        alert('ola')
-    }
+
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
             <div className="w-full bg-fundo-secundario  flex flex-col items-center gap-6 p-5 rounded sm:items-center sm:rounded-3xl md:w-md">
@@ -38,7 +39,15 @@ export default function PageComponentReset(props: NavigateReset) {
                 <div className="flex items-center justify-end w-full sm:w-sm">
                     <a onClick={() => router.push(props.login)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Logar</a>
                 </div>
-                <Btn title="Resetar Senha" lucide={ArrowRight} callback={() => reset()} />
+                <Btn title="Resetar Senha" lucide={ArrowRight} callback={async () => {
+                    setLoading(true)
+                    try {
+                        await Reset({ email })
+                    } finally {
+                        setLoading(false)
+                    }
+                }} />
+                <LoadingComponent loading={loading} />
                 <div className="flex items-center gap-2 justify-center">
                     <h1 className="text-placeholder text-xs font-bold">Não tem uma conta?</h1>
                     <a onClick={() => router.push(props.register)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Criar conta</a>

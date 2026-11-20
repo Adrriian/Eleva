@@ -1,7 +1,7 @@
 'use client'
 import ThemeToggle from "@/components/theme/BtnChangeMode";
 import InputComponente, { inputCom } from "@/components/Inputs/InputsGeral";
-import { useState } from "react";
+import { use, useState } from "react";
 
 import Btn from "@/components/button/ButtonGeral";
 import { ArrowRight, ChartColumn, ChartPie, File, Goal, LockKeyholeIcon, Mail } from "lucide-react";
@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { TPRegister } from "./types/typeRG";
 import { NavigateRegister } from "./types/navigateRouter";
 import { Register } from "./functions/register";
+import LoadingComponent from "@/components/loading/loading";
 
 
 
@@ -17,6 +18,7 @@ export default function PageComponentRegister(props: NavigateRegister) {
     const [passwordData, setpasswordData] = useState(false)
     const [passwordTrue, setpasswordTrue] = useState(false)
     const [register, setRegister] = useState<TPRegister>({ email: '', password: '', confirm: '' })
+    const [loading, setLoading] = useState(false)
     const router = useRouter()
 
     const confirms = (value: string) => {
@@ -28,6 +30,7 @@ export default function PageComponentRegister(props: NavigateRegister) {
             setpasswordTrue(true)
         }
     }
+
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
             <div className="w-full bg-fundo-secundario  flex flex-col items-center gap-6 p-5 rounded sm:items-center sm:rounded-3xl md:w-md">
@@ -53,16 +56,27 @@ export default function PageComponentRegister(props: NavigateRegister) {
                         confirms(value)
                     }
                     } />
-                    <h1 className={`mt-2 ml-2 text-xs   ${!passwordData ? 'hidden' : 'flex'}  ${!passwordTrue ? 'text-red-500' : 'text-green-600'}`}>{!passwordTrue ? "Senhas não batem" : "Senha batem"}</h1>
+                    <h1 className="text-[12px]  ml-2 text-gray-600">Senha precisa de maiúscula, minúscula, número e símbolo.</h1>
+                    <h1 className={` ml-2 text-xs   ${!passwordData ? 'hidden' : 'flex'}  ${!passwordTrue ? 'text-red-500' : 'text-green-600'}`}>{!passwordTrue ? "Senhas não São iguais" : "Senha Iguais"}</h1>
                 </div>
                 <div className="flex items-center justify-end w-full sm:w-sm">
                     <a onClick={() => router.push(props.reset)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Esqueceu a Senha</a>
                 </div>
-                <Btn title="Cadastrar" lucide={ArrowRight} callback={() => Register({
-                    email: register.email,
-                    password: register.password,
-                    confirm: register.confirm
-                })} />
+                <Btn title="Cadastrar" lucide={ArrowRight} callback={async () => {
+                    setLoading(true)
+                    try {
+                        await Register({
+                            email: register.email,
+                            password: register.password,
+                            confirm: register.confirm
+                        })
+                    } finally {
+                        setLoading(false)
+                    }
+                }}
+                />
+
+                <LoadingComponent loading={loading} />
                 <div className="flex items-center gap-2 justify-center">
                     <h1 className="text-placeholder text-xs font-bold">Conta cria? Acesse a área de</h1>
                     <a onClick={() => router.push(props.login)} className="text-bordo-vibrante text-xs font-bold underline cursor-pointer">Login</a>
