@@ -69,7 +69,7 @@ export default function PageComponentRegister(props: NavigateRegister) {
                             email: register.email,
                             password: register.password,
                             confirm: register.confirm
-                        })
+                        }, router)
                     } finally {
                         setLoading(false)
                     }

@@ -1,15 +1,14 @@
 import { auth } from "@/app/utils/firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
-import { useRouter } from "next/router"
-
+import { useRouter } from "next/navigation"
+import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
 type login = {
     email: string
     password: string
 }
 
-export async function Login(props: login) {
-    const router = useRouter()
+export default async function Login(props: login, router: AppRouterInstance) {
 
     if (!props.email) {
         alert("Digite seu E-mail")

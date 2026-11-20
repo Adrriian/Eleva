@@ -9,7 +9,7 @@ import InputPassword from "@/components/Inputs/inputPassword";
 import { useRouter } from "next/navigation";
 import { TpLogin } from "./types/typeLg";
 import { Navigate } from "./types/navigateRouter";
-import { Login } from "./functions/login";
+import Login, { } from "./functions/login";
 import LoadingComponent from "@/components/loading/loading";
 
 
@@ -47,7 +47,7 @@ export default function PageComponentLogin(props: Navigate) {
                         await Login({
                             email: login.email,
                             password: login.password
-                        })
+                        }, router)
                     } finally {
                         setLoading(false)
                     }

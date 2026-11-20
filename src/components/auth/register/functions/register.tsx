@@ -1,7 +1,9 @@
+"use client"
 import { auth } from "@/app/utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useRouter } from "next/router";
-import { useState } from "react";
+import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import { useRouter } from "next/navigation"
+
 
 type Register = {
     email: string
@@ -9,8 +11,9 @@ type Register = {
     confirm: string
 }
 
-export async function Register(props: Register) {
-    const router = useRouter()
+export async function Register(props: Register, router: AppRouterInstance) {
+
+
     if (!props.email) {
         alert("Digite seu E-mail")
         return
