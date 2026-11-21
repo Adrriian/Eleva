@@ -6,8 +6,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className="">
-                <div className="flex flex-col items-start justify-between h-screen w-full ">
-
+                <div className="flex flex-col items-start justify-center h-screen w-full ">
                     {children}
                 </div>
             </body>

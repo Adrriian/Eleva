@@ -2,6 +2,7 @@
 import { ChartColumn, ChartPie, Goal } from "lucide-react";
 
 import PageComponentLogin from "@/components/auth/login/pages";
+import ThemeToggle from "@/components/theme/BtnChangeMode";
 
 export default function PageLogin() {
     return (
@@ -24,8 +25,8 @@ export default function PageLogin() {
                                     <ChartPie color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1>Controle de gastos</h1>
-                                    <p>Registre suas movimentações com facilidade.</p>
+                                    <h1 className="text-placeholder">Controle de gastos</h1>
+                                    <p className="text-placeholder">Registre suas movimentações com facilidade.</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -33,8 +34,8 @@ export default function PageLogin() {
                                     <Goal color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1>Metas e sonhos</h1>
-                                    <p>Planeje o seu futuro.</p>
+                                    <h1 className="text-placeholder">Metas e sonhos</h1>
+                                    <p className="text-placeholder">Planeje o seu futuro.</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -42,8 +43,8 @@ export default function PageLogin() {
                                     <ChartColumn color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1>Relatórios completos</h1>
-                                    <p>Entenda melhor o seu dinheiro.</p>
+                                    <h1 className="text-placeholder">Relatórios completos</h1>
+                                    <p className="text-placeholder">Entenda melhor o seu dinheiro.</p>
                                 </div>
                             </div>
                         </div>
