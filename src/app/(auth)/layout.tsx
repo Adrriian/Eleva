@@ -7,7 +7,7 @@ export default function RootLayout({
         <html lang="en">
             <body className="">
                 <div className="flex flex-col items-start justify-between h-screen w-full ">
-                    <img src='/assests/logo/ondas_cima.svg' className="w-40 object-cover" />
+
                     {children}
                 </div>
             </body>
