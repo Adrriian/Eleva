@@ -37,9 +37,9 @@ export default function PageComponentReset(props: NavigateReset) {
                     <InputComponente lucide={Mail} placeholder="Digite seu Email" type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="flex items-center justify-end w-full sm:w-sm">
-                    <a onClick={() => router.push(props.login)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Logar</a>
+                    <a onClick={() => router.push(props.login)} className="text-bordo-vibrante text-sm font-bold underline cursor-pointer">Login</a>
                 </div>
-                <Btn title="Resetar Senha" lucide={ArrowRight} callback={async () => {
+                <Btn title="Enviar email" lucide={ArrowRight} callback={async () => {
                     setLoading(true)
                     try {
                         await Reset({ email })

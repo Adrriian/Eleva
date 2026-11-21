@@ -12,11 +12,11 @@ export default function PageLogin() {
                     <div className="hidden p-5 lg:flex flex-col w-md items-start justify-start lg:gap-10">
                         <div className="flex flex-col gap-5">
                             <div className="flex flex-col">
-                                <h1 className=" text-3xl text-texto-secundario ">Seu Dinheiro</h1>
+                                <h1 className=" text-3xl text-white ">Seu Dinheiro</h1>
                                 <h1 className="font-bold text-bordo-vibrante text-4xl">no seu controle</h1>
                             </div>
                             <div className="flex items-center justify-center w-sm">
-                                <h1 className="text-placeholder text-xl">Organize suas finanças, acompanhe seus gastos e conquiste seus objetivos com mais tranquilidade.</h1>
+                                <h1 className="text-texto-terceiro text-xl">Organize suas finanças, acompanhe seus gastos e conquiste seus objetivos com mais tranquilidade.</h1>
                             </div>
                         </div>
                         <div className="flex flex-col gap-5">
@@ -25,8 +25,8 @@ export default function PageLogin() {
                                     <ChartPie color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1 className="text-placeholder">Controle de gastos</h1>
-                                    <p className="text-placeholder">Registre suas movimentações com facilidade.</p>
+                                    <h1 className="text-texto-terceiro">Controle de gastos</h1>
+                                    <p className="text-texto-terceiro">Registre suas movimentações com facilidade.</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -34,8 +34,8 @@ export default function PageLogin() {
                                     <Goal color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1 className="text-placeholder">Metas e sonhos</h1>
-                                    <p className="text-placeholder">Planeje o seu futuro.</p>
+                                    <h1 className="text-texto-terceiro">Metas e sonhos</h1>
+                                    <p className="text-texto-terceiro">Planeje o seu futuro.</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2">
@@ -43,13 +43,14 @@ export default function PageLogin() {
                                     <ChartColumn color={'#fff'} />
                                 </div>
                                 <div>
-                                    <h1 className="text-placeholder">Relatórios completos</h1>
-                                    <p className="text-placeholder">Entenda melhor o seu dinheiro.</p>
+                                    <h1 className="text-texto-terceiro">Relatórios completos</h1>
+                                    <p className="text-texto-terceiro">Entenda melhor o seu dinheiro.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <ThemeToggle />
                 <PageComponentLogin reset="../reset" register="../registerUser" />
             </div>
         </main>

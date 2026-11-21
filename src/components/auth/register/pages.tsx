@@ -56,7 +56,7 @@ export default function PageComponentRegister(props: NavigateRegister) {
                         confirms(value)
                     }
                     } />
-                    <h1 className="text-[12px]  ml-2 text-gray-600">Senha precisa de maiúscula, minúscula, número e símbolo.</h1>
+                    <h1 className="text-[12px]  ml-2 text-gray-600">Senha precisa de letras maiúscula, minúscula, número e símbolo.</h1>
                     <h1 className={` ml-2 text-xs   ${!passwordData ? 'hidden' : 'flex'}  ${!passwordTrue ? 'text-red-500' : 'text-green-600'}`}>{!passwordTrue ? "Senhas não São iguais" : "Senha Iguais"}</h1>
                 </div>
                 <div className="flex items-center justify-end w-full sm:w-sm">
