@@ -5,7 +5,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className="">
+            <body>
                 <div className="flex flex-col items-start justify-center h-screen w-full ">
                     {children}
                 </div>

@@ -21,14 +21,14 @@ export default function PageComponentRegister(props: NavigateRegister) {
     const [loading, setLoading] = useState(false)
     const router = useRouter()
 
-    const confirms = (value: string) => {
-        if (register.password !== value) {
-            setpasswordData(true)
-            setpasswordTrue(false)
-        } else {
-            setpasswordData(true)
-            setpasswordTrue(true)
+    const confirms = (password: string, confirm: string) => {
+        if (password === "" || confirm === "") {
+            setpasswordData(false)
+            return
         }
+
+        setpasswordData(true)
+        setpasswordTrue(password === confirm)
     }
 
     return (
@@ -49,11 +49,15 @@ export default function PageComponentRegister(props: NavigateRegister) {
                 </div>
                 <div className="w-full flex flex-col gap-4">
                     <InputComponente lucide={Mail} placeholder="Digite seu Email" type='email' value={register.email} onChange={e => setRegister({ ...register, email: e.target.value })} />
-                    <InputPassword lucideOne={LockKeyholeIcon} placeholder="Digite sua Senha" value={register.password} onChange={e => setRegister({ ...register, password: e.target.value })} />
+                    <InputPassword lucideOne={LockKeyholeIcon} placeholder="Digite sua Senha" value={register.password} onChange={(e) => {
+                        const valuePassword = e.target.value
+                        setRegister({ ...register, password: valuePassword })
+                        confirms(valuePassword, register.confirm)
+                    }} />
                     <InputPassword lucideOne={LockKeyholeIcon} placeholder="Confirme sua senha" value={register.confirm} onChange={(e) => {
-                        const value = e.target.value
-                        setRegister({ ...register, confirm: value })
-                        confirms(value)
+                        const valueConfirm = e.target.value
+                        setRegister({ ...register, confirm: valueConfirm })
+                        confirms(register.password, valueConfirm)
                     }
                     } />
                     <h1 className="text-[12px]  ml-2 text-gray-600">Senha precisa de letras maiúscula, minúscula, número e símbolo.</h1>
