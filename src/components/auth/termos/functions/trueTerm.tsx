@@ -26,8 +26,6 @@ export async function trueTerm(router: AppRouterInstance, theme: string) {
 
         })
 
-        console.log("Dados atualizados!");
-
         router.replace('/home')
 
 

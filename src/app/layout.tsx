@@ -1,5 +1,6 @@
 import "./globals.css";
 import { ThemeProvider } from "../contexts/themeMode";
+import { UserProvider } from "@/contexts/userContext";
 
 export default function RootLayout({
   children,
@@ -9,9 +10,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <UserProvider>
+          <ThemeProvider>
+            {children}
+          </ThemeProvider>
+        </UserProvider>
       </body>
     </html>
   );

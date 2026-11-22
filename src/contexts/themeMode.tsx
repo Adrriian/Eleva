@@ -1,13 +1,6 @@
 
 "use client";
-
-import {
-    createContext,
-    useContext,
-    useEffect,
-    useState,
-    type ReactNode,
-} from "react";
+import { createContext, useContext, useEffect, useState, type ReactNode, } from "react";
 
 type Theme = "light" | "dark";
 
@@ -17,9 +10,7 @@ type ThemeContextType = {
     toggleTheme: () => void;
 };
 
-const ThemeContext = createContext<ThemeContextType | undefined>(
-    undefined
-);
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({
     children,

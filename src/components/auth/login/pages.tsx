@@ -11,6 +11,7 @@ import { TpLogin } from "./types/typeLg";
 import { Navigate } from "./types/navigateRouter";
 import Login, { } from "./functions/login";
 import LoadingComponent from "@/components/loading/loading";
+import { useUser } from "@/contexts/userContext";
 
 
 
@@ -18,6 +19,7 @@ export default function PageComponentLogin(props: Navigate) {
     const [login, setLogin] = useState<TpLogin>({ email: '', password: '' })
     const [loading, setLoading] = useState(false)
     const router = useRouter()
+    const { setUsuario } = useUser();
     return (
         <div className="w-screen flex items-center justify-center p-3 lg:w-md">
             <div className="w-full bg-fundo-secundario  flex flex-col items-center gap-6 p-5 rounded sm:items-center sm:rounded-3xl md:w-md">
@@ -47,7 +49,7 @@ export default function PageComponentLogin(props: Navigate) {
                         await Login({
                             email: login.email,
                             password: login.password
-                        }, router)
+                        }, router, setUsuario)
                     } finally {
                         setLoading(false)
                     }
