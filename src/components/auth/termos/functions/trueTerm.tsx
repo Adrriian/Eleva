@@ -1,30 +1,35 @@
 "use client"
 import { auth, db } from "@/app/utils/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { doc, setDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
 
-type Register = {
-    email: string
-    password: string
-    confirm: string
-}
 
-export async function trueTerm(router: AppRouterInstance) {
+export async function trueTerm(router: AppRouterInstance, theme: string) {
     try {
+        const date = new Date()
+        const UID = await auth.currentUser
 
-        await setDoc(doc(db, 'users',), {
+        if (!UID) {
+            console.log("Usuário não autenticado!");
+            return;
+        }
+
+        const userRef = doc(db, "users", UID.uid);
+        await updateDoc(userRef, {
             termosAceitos: true,
-            termosAceitosEm: "",
+            termosAceitosEm: date,
             termosVersao: "1.0",
-            createdAt: "",
-            theme: 'light',
+            createdAt: date,
+            theme: theme,
             status: true,
 
         })
 
+        console.log("Dados atualizados!");
+
         router.replace('/home')
+
 
 
     } catch (error: any) {

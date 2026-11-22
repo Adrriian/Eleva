@@ -3,6 +3,7 @@ import { auth, db } from "@/app/utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import { doc, setDoc } from "firebase/firestore";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 
 type Register = {
@@ -44,6 +45,8 @@ export async function Register(props: Register, router: AppRouterInstance) {
             status: false,
 
         })
+        console.log(UID)
+
         if (UID !== '') {
             router.replace('/termos')
         }

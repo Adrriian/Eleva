@@ -1,12 +1,15 @@
 'use client'
 
-import TrueTerm from "@/components/Inputs/termo"
+import TrueTerm from "@/components/Inputs/ComponentTrueTerm"
 import ThemeToggle from "@/components/theme/BtnChangeMode"
 import { useTheme } from "@/contexts/themeMode"
 import { CalendarDays, FileSpreadsheet, Moon, Sun } from "lucide-react"
+import { trueTerm } from "./functions/trueTerm"
+import { useRouter } from "next/navigation";
 
 export default function PageComponentTermo() {
-
+    const { theme } = useTheme();
+    const router = useRouter();
     return (
         <div className="w-screen h-screen flex flex-col  ">
             <div className="w-screen flex justify-between bg-bordo-escuro p-3">
@@ -194,7 +197,7 @@ export default function PageComponentTermo() {
                     </div>
                     <div className="border-b-2 border-fundo-secundario"></div>
                     <div>
-                        <TrueTerm />
+                        <TrueTerm term={() => trueTerm(router, theme)} />
                     </div>
                 </div>
             </div>
