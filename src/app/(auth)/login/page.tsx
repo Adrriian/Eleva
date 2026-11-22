@@ -50,7 +50,6 @@ export default function PageLogin() {
                         </div>
                     </div>
                 </div>
-                <ThemeToggle />
                 <PageComponentLogin reset="../reset" register="../registerUser" />
             </div>
         </main>
