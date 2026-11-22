@@ -41,11 +41,6 @@ export async function Register(props: Register, router: AppRouterInstance) {
             email: props.email,
             telefone: "",
             dataDeNasc: "",
-            termosAceitos: false,
-            termosAceitosEm: "",
-            termosVersao: "1.0",
-            createdAt: "",
-            theme: 'light',
             status: false,
 
         })
