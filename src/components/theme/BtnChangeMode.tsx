@@ -1,6 +1,7 @@
 
 "use client";
 import { useTheme } from "@/contexts/themeMode";
+import { Moon, Sun } from "lucide-react";
 
 export default function ThemeToggle() {
     const { theme, toggleTheme } = useTheme();
@@ -8,11 +9,16 @@ export default function ThemeToggle() {
     return (
         <button
             onClick={toggleTheme}
-            className="rounded-lg border border-bordas-input bg-fundo-pricipal px-4 py-2  transition hover:opacity-80"
+            className="transition hover:opacity-80 "
         >
-            {theme === "light"
-                ? "Ativar tema escuro"
-                : "Ativar tema claro"}
+            {theme === 'light' ?
+                <div className="bg-slate-900 p-2 rounded-full">
+                    <Moon className="text-white" />
+                </div> :
+                <div className="bg-white p-2 rounded-full">
+                    <Sun className="text-yellow-600" />
+                </div>
+            }
         </button>
     );
 }

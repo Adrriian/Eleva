@@ -11,11 +11,13 @@
   --bordas-input: #303036;
   --fundo-principal: #cecbcb;
   --fundo-secundario: #F7F5F6;
+  --fundo-terceiro: #141417;
   --fundo-card: #d5d5d5;
   --bg-input: #FFFFFF;
   --texto-principal: #252126;
   --texto-secundario: #C2184B;
   --texto-terceiro: #fff;
+  --texto-quarto: #4A0719;
   --texto-btn: #fff;
   --placeholder: #6B6670;
   --sucesso: #16804A;
@@ -32,11 +34,13 @@
   --bordas-input: #303036;
   --fundo-principal: #0A0A0C;
   --fundo-secundario: #141417;
+  --fundo-terceiro: #F7F5F6;
   --fundo-card: #2222b3;
   --bg-input: #353535;
   --texto-principal: #F5F3F5;
   --texto-secundario: #fff;
   --texto-terceiro: #B8B8C2;
+  --texto-quarto: #E04470;
   --texto-btn: #fff;
   --placeholder: #B8B8C2;
   --sucesso: #4ADE80;
@@ -56,6 +60,7 @@
   --color-bordas-input: var (--bordas-input);
   --color-fundo-principal: var(--fundo-principal);
   --color-fundo-secundario: var(--fundo-secundario);
+  --color-fundo-terceiro: var(--fundo-terceiro);
   --color-fundo-card: var(--fundo-card);
   --color-bg-input: var(--bg-input);
   --color-texto-principal: var(--texto-principal);
@@ -64,7 +69,8 @@
   --color-sucesso: var(--sucesso);
   --color-erro: var(--erro);
   --color-texto-secundario: var(--texto-secundario);
-  --color-texto-terceiro: var(--texto-terceiro)
+  --color-texto-terceiro: var(--texto-terceiro);
+  --color-texto-quarto: var(--texto-quarto)
 }
 
 @media (prefers-color-scheme: dark) {

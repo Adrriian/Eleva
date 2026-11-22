@@ -1,8 +1,8 @@
 "use client"
-import { auth } from "@/app/utils/firebase";
+import { auth, db } from "@/app/utils/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import type { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
-import { useRouter } from "next/navigation"
+import { doc, setDoc } from "firebase/firestore";
 
 
 type Register = {
@@ -34,8 +34,22 @@ export async function Register(props: Register, router: AppRouterInstance) {
             props.password
         );
 
-        if (creteUser.user.uid !== '') {
-            router.replace('/home')
+        const UID = await creteUser.user.uid
+
+        await setDoc(doc(db, 'users', UID), {
+            name: "",
+            email: props.email,
+            telefone: "",
+            dataDeNasc: "",
+            termosAceitos: false,
+            termosAceitosEm: "",
+            termosVersao: "1.0",
+            createdAt: "",
+            status: false,
+            theme: 'light'
+        })
+        if (UID !== '') {
+            router.replace('/termos')
         }
 
     } catch (error: any) {
@@ -56,7 +70,6 @@ export async function Register(props: Register, router: AppRouterInstance) {
             case "auth/network-request-failed":
                 alert("Verifique sua conexão.");
                 break;
-
             default:
                 alert("Ocorreu um erro ao cadastrar.");
         }
