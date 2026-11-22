@@ -45,8 +45,9 @@ export async function Register(props: Register, router: AppRouterInstance) {
             termosAceitosEm: "",
             termosVersao: "1.0",
             createdAt: "",
+            theme: 'light',
             status: false,
-            theme: 'light'
+
         })
         if (UID !== '') {
             router.replace('/termos')
