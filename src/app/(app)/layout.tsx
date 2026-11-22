@@ -1,6 +1,6 @@
 'use client'
 import ThemeToggle from "@/components/theme/BtnChangeMode";
-import { CircleX, Goal, LayoutDashboard, Menu, UserRoundCog } from "lucide-react";
+import { CircleX, Goal, LayoutDashboard, Menu, UserCog, UserRoundCog } from "lucide-react";
 import { useState } from "react";
 
 export default function RootLayoutApp({
@@ -27,18 +27,25 @@ export default function RootLayoutApp({
                                 <h1 className="text-2xl">Eleva</h1>
                             </div>
                             <CircleX size={28} className="text-bordo-vibrante lg:hidden" />
-                        </div>
 
-                        <div className="flex flex-col justify-between h-4/5 overflow-scroll ">
+                        </div>
+                        <div className=" px-2 lg:px-0">
+                            <div className="bg-fundo-principal h-0.5 px-2 w-full"></div>
+                        </div>
+                        <div className="flex flex-col justify-between h-4/5  ">
                             <div className="p-5">
                                 <h1>Menu Principal</h1>
                             </div>
 
-                            <div className="p-5">
+                            <div className="flex flex-col">
                                 <div className=" px-2 lg:px-0">
                                     <div className="bg-fundo-principal h-0.5 px-2 w-full"></div>
                                 </div>
-                                <h1>Perfil</h1>
+                                <div className="p-5 flex gap-2 items-center">
+                                    <UserCog className="text-bordo-vibrante" />
+                                    <h1 className="text-xl">Perfil</h1>
+                                </div>
+
                             </div>
                         </div>
 
