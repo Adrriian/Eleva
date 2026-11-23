@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
     description: 'Organize suas finanças, metas e investimentos.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#cecbcb',
-    theme_color: '#cecbcb',
+    background_color: '#0A0A0C',
+    theme_color: '#fff',
     orientation: 'portrait',
     icons: [
       {
